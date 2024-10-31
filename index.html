@@ -1,23 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Media Exercise</title>
 </head>
-<body>
+
+<body style='
+  background-image: url(./assets/images/background.jpg); background-position: bottom center;
+  background-repeat: no-repeat;
+  background-color: green;
+  margin: 0;
+  height: 100vh;'>
   <div class="container">
     <!-- AUDIO HTML GOES HERE -->
+    <audio controls muted loop>
+      <source src="./assets/piano.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
 
     <!-- VIDEO HTML GOES HERE -->
-
+    <video controls muted poster='./assets/images/poster.jpg'>
+      <source src="./assets/video/ocean.mp4" type="video/mp4">
+    </video>
     <!-- IMAGE MAP HTML GOES HERE-->
-
+    <img src="./assets/images/fruit_table.jpg" alt="fruit_table" width='600px' usemap='#fruit'>
+    <map name="fruit">
+      <area shape="rect" coords="" href="https://en.wikipedia.org/wiki/Lavandula" alt="Lavandula">
+      <area shape="rect" coords="" href="https://en.wikipedia.org/wiki/Orange_(fruit)" alt="Orange">
+      <area shape="circle" coords="" href="https://en.wikipedia.org/wiki/Coffee" alt="Coffee">
+    </map>
     <!-- CANVAS HTML GOES HERE -->
+    <canvas id='myCanva' width='500px' height='500px'></canvas>
   </div>
 
   <script>
     /* CANVAS JAVASCRIPT GOES HERE */
+    const canvas = document.getElementById('myCanva');
+    const ctx = canvas.getContext('2d');
+    ctx.lineWidth = 1;
+
+    ctx.strokeStyle = 'red';
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+
+    ctx.strokeStyle = 'blue';
+    ctx.beginPath();
+    ctx.moveTo(200, 100);
+    ctx.lineTo(200, 200);
+    ctx.stroke();
+
+    ctx.strokeStyle = 'green';
+    ctx.beginPath();
+    ctx.moveTo(200, 200);
+    ctx.lineTo(100, 200);
+    ctx.stroke();
+
+    ctx.strokeStyle = 'yellow';
+    ctx.beginPath();
+    ctx.moveTo(100, 200);
+    ctx.lineTo(100, 100);
+    ctx.stroke();
   </script>
 </body>
+
 </html>
